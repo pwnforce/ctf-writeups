@@ -4,7 +4,7 @@ RUN apt-get update --fix-missing -y; exit 0;
 RUN apt-get install -y apt-utils; exit 0;
 RUN apt-get upgrade -y; exit 0;
 
-RUN apt-get install -y python python-pip python-dev git libssl-dev libffi-dev build-essential gdb git vim xterm x11-xserver-utils ruby-full bash-completion bsdmainutils ruby-dev sudo wget cmake; exit 0;
+RUN apt-get install -y python python3-pip python-dev git libssl-dev libffi-dev build-essential gdb git vim xterm x11-xserver-utils ruby-full bash-completion bsdmainutils ruby-dev sudo wget cmake; exit 0;
 
 RUN apt-get install -y gdb-multiarch; exit 0;
 RUN apt-get install -y gcc-arm-linux-gnueabihf; exit 0;
@@ -23,7 +23,7 @@ RUN ln -s /usr/aarch64-linux-gnu/ /etc/qemu-binfmt/aarch64;
 
 RUN gem install one_gadget; exit 0;
 
-RUN python -m pip install --upgrade pwntools;
+RUN python3 -m pip install --upgrade pwntools;
 
 RUN echo "set tabstop=4\nset autoindent\nset shiftwidth=4\nset expandtab" >> /etc/vim/vimrc;
 RUN echo "xterm*faceName: Monospace\nxterm*faceSize: 18\nxterm*background: black\nxterm*foreground: green" > ~/.Xresources
